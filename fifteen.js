@@ -3,8 +3,16 @@ window.onload;
 $(document).ready(function()
 
 {
+	document.querySelector('h1').classList.add('headClass');
+	$('.headClass').on('click', function()
+			{
+
+				$('h1').slideToggle(900).text('>>>Golden State Warriors<<<')
+			})
+	
 
 	var area = document.querySelectorAll('#puzzlearea div');
+
 
 	
 		//First four puzzle blocks (1 - 4)
@@ -70,11 +78,20 @@ $(document).ready(function()
 			}
 
 			
-
+				//Adding puzzlepiece style to numbers
 			for (var n = 0; n < area.length; n++)
 				{
 
 					area[n].classList.add('puzzlepiece')
+					area[n].style.color = "yellow"
+					area[n].style.fontFamily = "Copperplate Gothic"//Team Jersey Font
+					area[n].style.fontSize = "bold"
+					area[n].style.textShadow = "4px 4px 8px white"
+
+					$('.puzzlepiece').on('mouseover', function()
+					{
+						$(area[n]).slideUp(500);
+					})
 
 				}
 
