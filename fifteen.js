@@ -1,3 +1,4 @@
+
 window.onload;
 
 $(document).ready(function()
@@ -14,8 +15,11 @@ $(document).ready(function()
 	var area = document.querySelectorAll('#puzzlearea div');
 
 
+
+
+
 	
-		//First four puzzle blocks (1 - 4)
+		//First four puzzle blocks (1 - 4)	
 
 	let fCount = 0;
 	let	fCount2 = 0;
@@ -28,6 +32,7 @@ $(document).ready(function()
 				fCount++;
 				fCount2 += 100;
 			}
+
 
 		// Second four puzzle blocks (5 - 8)
 
@@ -95,24 +100,146 @@ $(document).ready(function()
 
 				}
 
-			//document.getElementById('puzzlearea').classList.add('puzzlepiece');	
+				
+			
+			
 
-	
+				
 
+$('#shufflebutton').on('click', function()
+		{
+
+				function shuffle() //shuffle order functtion
+			{
+			area[0].style.top = "0px"
+			area[0].style.left = "100px"
+			area[1].style.top = "0px"
+			area[1].style.left = "0px"
+			area[2].style.top = "0px"
+			area[2].style.left = "300px"
+			area[3].style.top = "0px"
+			area[3].style.left = "200px"
+
+			area[4].style.top = "100px"
+			area[4].style.left = "0px"
+			area[5].style.top = "100px"
+			area[5].style.left = "300px"
+			area[6].style.top = "100px"
+			area[6].style.left = "200px"
+			area[7].style.top = "100px"
+			area[7].style.left = "100px"
+
+			area[8].style.top = "200px"
+			area[8].style.left = "300px"
+			area[9].style.top = "200px"
+			area[9].style.left = "200px"
+			area[10].style.top = "200px"
+			area[10].style.left = "0px"
+			area[11].style.top = "200px"
+			area[11].style.left = "100px"
+
+			area[12].style.top = "300px"
+			area[12].style.left = "100px"
+			area[13].style.top = "300px"
+			area[13].style.left = "0px"
+			area[14].style.top = "300px"
+			area[14].style.left = "300px"
+			}
+
+
+			function shuffle1() //Shuffle order funtion
+			{
+			area[0].style.top = "100px"
+			area[0].style.left = "100px"
+			area[1].style.top = "100px"
+			area[1].style.left = "0px"
+			area[2].style.top = "100px"
+			area[2].style.left = "300px"
+			area[3].style.top = "100px"
+			area[3].style.left = "200px"
+
+			area[4].style.top = "0px"
+			area[4].style.left = "0px"
+			area[5].style.top = "0px"
+			area[5].style.left = "300px"
+			area[6].style.top = "0px"
+			area[6].style.left = "200px"
+			area[7].style.top = "0px"
+			area[7].style.left = "100px"
+
+			area[8].style.top = "300px"
+			area[8].style.left = "300px"
+			area[9].style.top = "300px"
+			area[9].style.left = "200px"
+			area[10].style.top = "300px"
+			area[10].style.left = "0px"
+			area[11].style.top = "300px"
+			area[11].style.left = "100px"
+
+			area[12].style.top = "200px"
+			area[12].style.left = "100px"
+			area[13].style.top = "200px"
+			area[13].style.left = "0px"
+			area[14].style.top = "200px"
+			area[14].style.left = "300px"
+			}
+
+function shuffle2() //Shuffle order function
+			{
+			area[0].style.top = "200px"		
+			area[0].style.left = "200px"
+			area[1].style.top = "300px"
+			area[1].style.left = "200px"
+			area[2].style.top = "200px"
+			area[2].style.left = "300px"
+			area[3].style.top = "100px"
+			area[3].style.left = "100px"
+
+			area[4].style.top = "300px"
+			area[4].style.left = "100px"
+			area[5].style.top = "300px"
+			area[5].style.left = "300px"
+			area[6].style.top = "0px"
+			area[6].style.left = "100px"
+			area[7].style.top = "300px"
+			area[7].style.left = "0px"
+
+			area[8].style.top = "100px"
+			area[8].style.left = "0px"
+			area[9].style.top = "100px"
+			area[9].style.left = "300px"
+			area[10].style.top = "100px"
+			area[10].style.left = "200px"
+			area[11].style.top = "200px"
+			area[11].style.left = "0px"
+
+			area[12].style.top = "0px"
+			area[12].style.left = "200px"
+			area[13].style.top = "0px"
+			area[13].style.left = "300px"
+			area[14].style.top = "0px"
+			area[14].style.left = "0px"
+			}
+
+			
+
+
+
+				let shuffleArray= [shuffle, shuffle1, shuffle2] //shuffle orders
+
+			shuffleArray[Math.floor(Math.random()*3) + 0]()// randomize the shuffle order
+
+
+
+
+		})
+
+
+						
+
+		
 })
 
-
-
-
-/*for (var i = 0, i < area.length, i++)
-
-		{
-			if (area[i].style.top === '0')
-				{
-					var add = 100;
-					area[i].style.left = add += 100 + '';
-				}
-		}*/
 
 	
 
