@@ -1,4 +1,4 @@
-
+"use strict";
 window.onload;
 
 $(document).ready(function()
@@ -235,11 +235,95 @@ function shuffle2() //Shuffle order function
 		})
 
 
+// Create radio buttons for picture choice
+		
+		var newDiv = document.createElement('div')
+		newDiv.setAttribute('id', 'picturechoice')
+		newDiv.innerHTML = "<h1> Choose a picture you want to use </h1>";
+		document.body.append(newDiv);
+		newDiv.style.fontFamily = "Copperplate Gothic";
+		newDiv.style.color = "yellow";
+		newDiv.style.fontSize = "20px";
+		newDiv.style.fontStyle = "bold"
+		newDiv.style.textShadow = "8px 8px 12px blue"
+
+		let picBtn = document.createElement('button') //Button Styling
+		picBtn.setAttribute('id', 'picturechange')
+		picBtn.setAttribute('name','Button')
+		picBtn.textContent = 'Change Picture'
+		picBtn.style.textAlign = 'center'
+		picBtn.style.padding = "20px 100px 20px 100px"
+		picBtn.style.background = "transparent"
+		picBtn.style.fontFamily = "Copperplate Gothic"
+		picBtn.style.position = 'absolute'
+		picBtn.style.top = "200px"
+		picBtn.style.fontSize = "20px"
+		picBtn.style.color = '#DDDDDD'
+		picBtn.style.borderRadius = "25px"
+		picBtn.style.cursor = "pointer"
+		
+		$(picBtn).on('mouseenter', function()//Adds Color to button on mouseenter
+
+		{
+			$('#picturechange').css('color','#4169e1')
+			$('#picturechange').css('background','#ffdf00')
+		})
+
+		$(picBtn).on('mouseleave', function()//when mouse leaves puts button to original styling
+
+		{
+			$('#picturechange').css('color','#DDDDDD')
+			$('#picturechange').css('background','transparent')
+
+		})
+
+		$(picBtn).on('click', function() //Change picture on tiles
+			{
+				let imgArray = ['kevin.jpg', 'klay.jpg', 'logo.jpg', 'steph.jpg',
+								 'stephkevin.jpg', 'steve.jpg', 'team.jpg']
+
+				let randomImage = imgArray[Math.floor(Math.random()*7) + 0]
+
+				for (var n = 0; n < area.length; n++)
+				{
+					let puzzlepiece = document.getElementsByClassName('puzzlepiece')
+					puzzlepiece[n].style.backgroundImage = `url(${randomImage})`
+				}
+
+
+				//$('.puzzlepiece').css('background-image', 'randomImage')
+
+
+
+
+			})
+
+
+		document.body.append(picBtn)
+	
+
+		var body = document.querySelector('body')
+		body.style.backgroundImage = 'url(warriorsbackground.jpg)';
+		body.style.backgroundPositionX = "-100px";
+		body.style.backgroundPositionY = "-250px"
+	
+			let shuffleButton = document.querySelector("#shufflebutton");
+			shuffleButton.style.background = "none";
+			shuffleButton.style.cursor = "pointer"; 
+			shuffleButton.style.borderRadius = "25px";
+			shuffleButton.style.fontFamily = "Arial";
+			shuffleButton.style.fontSize = "18px"
+			shuffleButton.style.padding = "0 50px 0 50px"
+	
+
+
+
+
 						
 
 		
 })
-
+				
 
 	
 
