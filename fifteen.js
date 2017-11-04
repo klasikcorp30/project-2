@@ -1,4 +1,5 @@
 "use strict";
+//Extra Feature: Multiple Background
 window.onload;
 
 $(document).ready(function()
