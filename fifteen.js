@@ -5,12 +5,19 @@ window.onload;
 $(document).ready(function()
 
 {
-	document.querySelector('h1').classList.add('headClass');
-	$('.headClass').on('click', function()
+	document.querySelector('h1').setAttribute('id', 'headClass')
+	$('#headClass').on('mouseenter', function()
 			{
 
-				$('h1').slideToggle(900).text('>>>Golden State Warriors<<<')
+				$('h1').text('Golden State Warriors Edition')
 			})
+
+	$('#headClass').on('mouseleave', function()
+			{
+
+				$('h1').text('Fifteen Puzzle')
+			})
+
 	
 
 	var area = document.querySelectorAll('#puzzlearea div');
@@ -228,15 +235,120 @@ function shuffle2() //Shuffle order function
 
 				let shuffleArray= [shuffle, shuffle1, shuffle2] //shuffle orders
 
-			shuffleArray[Math.floor(Math.random()*3) + 0]()// randomize the shuffle order
+			
+			
 
+			// Moving the tiles
+
+	
+
+		//function for detecting moveable piece	
+
+		function canMove()
+		{
+			switch (shuffleArray[Math.floor(Math.random()*4) + 0]) // randomize the shuffle order
+			{
+				case shuffleArray[0]():
+
+		
+						$(area[12]).on('mouseover',function()
+						{
+						
+							area[12].classList.add('movablepiece')
+				
+
+						})
+
+						$(area[9]).on('mouseover', function()
+						{
+							area[9].classList.add('movablepiece')
+				
+
+
+						})
+
+						$(area[14]).on('mouseover', function()
+						{
+							area[14].classList.add('movablepiece')
+
+						})
+
+
+				case shuffleArray[1]():
+
+						$(area[3]).on('mouseover',function()
+						{
+						
+							area[3].classList.add('movablepiece')
+				
+
+						})
+
+						$(area[9]).on('mouseover', function()
+						{
+							area[9].classList.add('movablepiece')
+				
+
+
+						})
+
+						$(area[14]).on('mouseover', function()
+						{
+							area[14].classList.add('movablepiece')
+
+						})
+
+						$(area[12]).on('mouseover', function()
+						{
+							area[12].classList.add('movablepiece')
+
+						})
+
+				case shuffleArray[2]():
+
+						$(area[0]).on('mouseover',function()
+						{
+						
+							area[0].classList.add('movablepiece')
+				
+
+						})
+
+						$(area[4]).on('mouseover', function()
+						{
+							area[4].classList.add('movablepiece')
+				
+
+
+						})
+
+						$(area[3]).on('mouseover', function()
+						{
+							area[3].classList.add('movablepiece')
+
+						})
+
+						$(area[11]).on('mouseover', function()
+						{
+							area[11].classList.add('movablepiece')
+
+						})
+
+
+
+
+			}
+		}
+		canMove()
+		
+	
 
 
 
 		})
 
 
-// Create radio buttons for picture choice
+// Create buttons for picture choice
 		
 		var newDiv = document.createElement('div')
 		newDiv.setAttribute('id', 'picturechoice')
@@ -263,11 +375,14 @@ function shuffle2() //Shuffle order function
 		picBtn.style.borderRadius = "25px"
 		picBtn.style.cursor = "pointer"
 		
+		
 		$(picBtn).on('mouseenter', function()//Adds Color to button on mouseenter
 
 		{
 			$('#picturechange').css('color','#4169e1')
 			$('#picturechange').css('background','#ffdf00')
+			picBtn.style.boxShadow = " 5px 5px 10px 10px #4169e1"
+		
 		})
 
 		$(picBtn).on('mouseleave', function()//when mouse leaves puts button to original styling
@@ -275,15 +390,19 @@ function shuffle2() //Shuffle order function
 		{
 			$('#picturechange').css('color','#DDDDDD')
 			$('#picturechange').css('background','transparent')
+			picBtn.style.boxShadow = ''
+			$('#picturechange').animate()
 
 		})
 
 		$(picBtn).on('click', function() //Change picture on tiles
-			{
-				let imgArray = ['kevin.jpg', 'klay.jpg', 'logo.jpg', 'steph.jpg',
-								 'stephkevin.jpg', 'steve.jpg', 'team.jpg']
 
-				let randomImage = imgArray[Math.floor(Math.random()*7) + 0]
+			{
+
+				let imgArray = ['kevin.jpg', 'klay.jpg', 'logo.jpg', 'steph.jpg',
+								 'stephkevin.jpg', 'steve.jpg', 'team.jpg', 'draymond.jpg', 'background.jpg']
+
+				let randomImage = imgArray[Math.floor(Math.random()*8) + 0]
 
 				for (var n = 0; n < area.length; n++)
 				{
@@ -308,13 +427,18 @@ function shuffle2() //Shuffle order function
 		body.style.backgroundPositionX = "-100px";
 		body.style.backgroundPositionY = "-250px"
 	
-			let shuffleButton = document.querySelector("#shufflebutton");
+			let shuffleButton = document.querySelector("#shufflebutton"); //Shuffle button styling
 			shuffleButton.style.background = "none";
 			shuffleButton.style.cursor = "pointer"; 
 			shuffleButton.style.borderRadius = "25px";
 			shuffleButton.style.fontFamily = "Arial";
 			shuffleButton.style.fontSize = "18px"
 			shuffleButton.style.padding = "0 50px 0 50px"
+
+
+	
+
+
 	
 
 
