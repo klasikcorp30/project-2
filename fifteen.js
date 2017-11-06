@@ -237,9 +237,15 @@ function shuffle2() //Shuffle order function
 
 				//function for detecting moveable piece	
 
+<<<<<<< HEAD
 
 
 		switch (shuffleArray[Math.floor(Math.random()*3) +0]())
+=======
+				
+
+		switch (shuffleArray[Math.floor(Math.random()*2) +0]())
+>>>>>>> gh-branch
 
 			{
 				case shuffleArray[0]():
