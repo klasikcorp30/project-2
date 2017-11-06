@@ -234,29 +234,138 @@ function shuffle2() //Shuffle order function
 
 
 				let shuffleArray= [shuffle, shuffle1, shuffle2] //shuffle orders
-				shuffleArray[Math.floor(Math.random()*3)+0]()
+
+				//function for detecting moveable piece	
+
+				
+
+		switch (shuffleArray[Math.floor(Math.random()*2) +0]())
+
+			{
+				case shuffleArray[0]():
+
+				area[9].classList.add('movablepiece')
+				area[12].classList.add('movablepiece')
+				area[14].classList.add('movablepiece')
+					break;
+				
+
+
+				case shuffleArray[1]():
+
+				area[9].classList.add('movablepiece')
+				area[12].classList.add('movablepiece')
+				area[14].classList.add('movablepiece')
+				area[3].classList.add('movablepiece')
+					break;
+				
+
+				case shuffleArray[2]():
+
+
+				area[4].classList.add('movablepiece')
+				area[11].classList.add('movablepiece')
+				area[0].classList.add('movablepiece')
+				area[3].classList.add('movablepiece')
+					break;
+
+
+
+
+
+
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		})
 			
 
 			// Moving the tiles
 
-			function existingTiles()
-				{
-					for (var i = 0; i < area.length; i++) {
-						let topPosition = []
-						topPostion.push(area[i].style.top)
-						let leftposition = []
-						leftPosition.push(area[i].style.left)
+	function down()
+	{
+		for (var i = 0; i < area.length; i++) {
+	 
+	
 
-					}
+			if (parseInt(area[i].style.top) < 300)
+		
+				{
+					area[i].style.top = `${parseInt(area[i].style.top) + 100}px`
 				}
+
 					
-				alert(this.topPostion)
-				
+		}
+	}
+
+
+	function up()
+	{
+		for (var i = 0; i < area.length; i++) {
+	 
+	
+
+			if (parseInt(area[i].style.top) > 0)
+		
+				{
+					area[i].style.top = `${parseInt(area[i].style.top) + 100}px`
+				}
+
+					
+		}
+	}
+	
+
+	function left()
+	{
+		for (var i = 0; i < area.length; i++) {
+	 
+	
+
+			if (parseInt(area[i].style.left) > 0)
+		
+				{
+					area[i].style.left = `${parseInt(area[i].style.left) + 100}px`
+				}
+
+					
+		}
+	}
+
+	function right()
+	{
+		for (var i = 0; i < area.length; i++) {
+	 
+	
+
+			if (parseInt(area[i].style.left) > 300)
+		
+				{
+					area[i].style.left = `${parseInt(area[i].style.top) + 100}px`
+				}
+
+					
+		}
+	}
+
 
 	
 
-		//function for detecting moveable piece	
+	
+
+
 
 		
 	 // randomize the shuffle order
