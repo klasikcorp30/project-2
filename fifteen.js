@@ -234,118 +234,38 @@ function shuffle2() //Shuffle order function
 
 
 				let shuffleArray= [shuffle, shuffle1, shuffle2] //shuffle orders
-
-			
+				shuffleArray[Math.floor(Math.random()*3)+0]()
+		})
 			
 
 			// Moving the tiles
+
+			function existingTiles()
+				{
+					for (var i = 0; i < area.length; i++) {
+						let topPosition = []
+						topPostion.push(area[i].style.top)
+						let leftposition = []
+						leftPosition.push(area[i].style.left)
+
+					}
+				}
+					
+				alert(this.topPostion)
+				
 
 	
 
 		//function for detecting moveable piece	
 
-		function canMove()
-		{
-			switch (shuffleArray[Math.floor(Math.random()*4) + 0]) // randomize the shuffle order
-			{
-				case shuffleArray[0]():
-
 		
-						$(area[12]).on('mouseover',function()
-						{
-						
-							area[12].classList.add('movablepiece')
-				
-
-						})
-
-						$(area[9]).on('mouseover', function()
-						{
-							area[9].classList.add('movablepiece')
-				
-
-
-						})
-
-						$(area[14]).on('mouseover', function()
-						{
-							area[14].classList.add('movablepiece')
-
-						})
-
-
-				case shuffleArray[1]():
-
-						$(area[3]).on('mouseover',function()
-						{
-						
-							area[3].classList.add('movablepiece')
-				
-
-						})
-
-						$(area[9]).on('mouseover', function()
-						{
-							area[9].classList.add('movablepiece')
-				
-
-
-						})
-
-						$(area[14]).on('mouseover', function()
-						{
-							area[14].classList.add('movablepiece')
-
-						})
-
-						$(area[12]).on('mouseover', function()
-						{
-							area[12].classList.add('movablepiece')
-
-						})
-
-				case shuffleArray[2]():
-
-						$(area[0]).on('mouseover',function()
-						{
-						
-							area[0].classList.add('movablepiece')
-				
-
-						})
-
-						$(area[4]).on('mouseover', function()
-						{
-							area[4].classList.add('movablepiece')
-				
-
-
-						})
-
-						$(area[3]).on('mouseover', function()
-						{
-							area[3].classList.add('movablepiece')
-
-						})
-
-						$(area[11]).on('mouseover', function()
-						{
-							area[11].classList.add('movablepiece')
-
-						})
-
-
-
-
-			}
-		}
-		canMove()
-		
+	 // randomize the shuffle order
+			
 	
 
 
 
-		})
+		
 
 
 // Create buttons for picture choice
